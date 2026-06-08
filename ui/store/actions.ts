@@ -174,7 +174,10 @@ import {
   loadRelativeTimeFormatLocaleData,
 } from '../../shared/lib/i18n';
 import { decimalToHex } from '../../shared/lib/conversion.utils';
-import { PriorityLevels } from '../../shared/constants/gas';
+import {
+  type AdvancedGasFeePreferences,
+  PriorityLevels,
+} from '../../shared/constants/gas';
 import {
   getErrorMessage,
   isErrorWithMessage,
@@ -4859,9 +4862,11 @@ export function detectNfts(
   };
 }
 
-export function setAdvancedGasFee(
-  val: { chainId: Hex; maxBaseFee?: string; priorityFee?: string } | null,
-): ThunkAction<void, MetaMaskReduxState, unknown, AnyAction> {
+export function setAdvancedGasFee(val: {
+  account: Hex;
+  chainId: Hex;
+  gasFeePreferences?: AdvancedGasFeePreferences;
+}): ThunkAction<void, MetaMaskReduxState, unknown, AnyAction> {
   return async (dispatch: MetaMaskReduxDispatch) => {
     dispatch(showLoadingIndication());
     log.debug(`background.setAdvancedGasFee`);
