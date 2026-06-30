@@ -3144,6 +3144,9 @@
   "darkTheme": {
     "message": "Dark"
   },
+  "pureBlackThemePreview": {
+    "message": "Pure black (preview)"
+  },
   "data": {
     "message": "Data"
   },
