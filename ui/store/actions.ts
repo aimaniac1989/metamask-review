@@ -4881,7 +4881,11 @@ export function setTheme(
 ): ThunkAction<void, MetaMaskReduxState, unknown, AnyAction> {
   // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31879
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
-  return async () => {
+  return async (_dispatch: MetaMaskReduxDispatch, getState) => {
+    // Capture the previous saved preference so we can roll back the DOM if the RPC fails.
+    const previousThemeSetting = getState()?.metamask?.theme as
+      | ThemeType
+      | undefined;
     // Theme is a synchronous preference update — apply DOM tokens immediately
     // and skip the global loading overlay (which could stick if the RPC stalls).
     applyDocumentTheme(val);
@@ -4890,6 +4894,11 @@ export function setTheme(
       await submitRequestToBackground('setTheme', [val]);
     } catch (error) {
       logErrorWithMessage(error);
+      // Roll back the optimistic DOM update to match persisted preferences
+      // since Redux/useTheme will remain on the previous value after a failed RPC.
+      if (previousThemeSetting) {
+        applyDocumentTheme(previousThemeSetting);
+      }
     }
   };
 }
