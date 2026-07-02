@@ -1,0 +1,38 @@
+/**
+ * Extension-only visual fixes for the pure-black (OLED) dark palette preview.
+ *
+ * Gated on `data-pure-black="true"` from `@metamask/design-system-react` PureBlackProvider.
+ * Regular dark mode is unchanged — these address elevation/border issues called out in
+ * design QA (TMCU-622, TMCU-637) that only appear when background-default is true black.
+ */
+
+html[data-theme='dark']:has([data-pure-black='true']) {
+  // Align the extension shell with page content; avoids double-elevation on pure black.
+  background-color: var(--color-background-default);
+}
+
+[data-pure-black='true'] {
+  --extension-modal-border-color: var(--color-border-muted);
+
+  // Modals need an elevated surface (#0d0d0f) against the #000 page chrome.
+  .mm-modal-content__dialog {
+    background-color: var(--color-background-alternative);
+  }
+
+  // Multichain page inner frame border reads as a double border on pure black (e.g. Swaps).
+  .multichain-page__inner-container {
+    border: 0;
+  }
+
+  .multichain-page--has-app-header .multichain-page__inner-container {
+    border-radius: 0 0 2px 2px;
+    box-shadow: var(--shadow-size-xs) var(--color-shadow-default);
+  }
+
+  // Confirmations popup uses the inner-container frame for elevation.
+  .confirm_wrapper.multichain-page__inner-container {
+    border: 0;
+    border-radius: 2px;
+    box-shadow: var(--shadow-size-lg) var(--color-shadow-default);
+  }
+}
