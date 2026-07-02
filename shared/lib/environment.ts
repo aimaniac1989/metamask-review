@@ -96,7 +96,7 @@ export const getIsPasskeyFeatureEnabled = (): boolean => {
 
 /**
  * Compile-time gate (`MM_PURE_BLACK_PREVIEW`): when true, dark mode uses the
- * design-system pure-black preview tokens via `PureBlackProvider`.
+ * design-system pure-black preview tokens (see `setTheme` in ui/pages/routes/utils.js).
  */
 export const getIsPureBlackPreviewEnabled = (): boolean => {
   return process.env.MM_PURE_BLACK_PREVIEW?.toString() === 'true';

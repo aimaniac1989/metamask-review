@@ -1,12 +1,12 @@
 /**
  * Extension-only visual fixes for the pure-black (OLED) dark palette preview.
  *
- * Gated on `data-pure-black="true"` from `@metamask/design-system-react` PureBlackProvider.
+ * Gated on `data-pure-black="true"` on the document root (see `setTheme` in routes utils).
  * Regular dark mode is unchanged — these address elevation/border issues called out in
  * design QA (TMCU-622, TMCU-637) that only appear when background-default is true black.
  */
 
-html[data-theme='dark']:has([data-pure-black='true']) {
+html[data-theme='dark'][data-pure-black='true'] {
   // Align the extension shell with page content; avoids double-elevation on pure black.
   background-color: var(--color-background-default);
 }

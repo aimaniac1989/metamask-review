@@ -6,6 +6,7 @@ import {
 } from '../../../shared/constants/app';
 import { NETWORK_TYPES } from '../../../shared/constants/network';
 import { ThemeType } from '../../../shared/constants/preferences';
+import { getIsPureBlackPreviewEnabled } from '../../../shared/lib/environment';
 import {
   ASSET_ROUTE,
   CONFIRM_TRANSACTION_ROUTE,
@@ -42,6 +43,15 @@ export function isConfirmTransactionRoute(pathname) {
   );
 }
 
+/**
+ * Resolves the user's theme preference to a concrete light/dark value for
+ * `data-theme` on `<html>`.
+ *
+ * TODO: Prefer stylesheet-level OS theming once design tokens support it
+ * (https://github.com/MetaMask/metamask-design-system/pull/814) instead of
+ * resolving `prefers-color-scheme` in JS.
+ * @param theme
+ */
 export function getThemeFromRawTheme(theme) {
   if (theme === ThemeType.os) {
     if (window?.matchMedia('(prefers-color-scheme: dark)')?.matches) {
@@ -52,11 +62,23 @@ export function getThemeFromRawTheme(theme) {
   return theme;
 }
 
+export function setDocumentPureBlack(isPureBlackActive) {
+  if (isPureBlackActive) {
+    document.documentElement.setAttribute('data-pure-black', 'true');
+  } else {
+    document.documentElement.removeAttribute('data-pure-black');
+  }
+}
+
 export function setTheme(theme) {
-  document.documentElement.setAttribute(
-    'data-theme',
-    getThemeFromRawTheme(theme),
-  );
+  const resolvedTheme = getThemeFromRawTheme(theme);
+  document.documentElement.setAttribute('data-theme', resolvedTheme);
+
+  if (getIsPureBlackPreviewEnabled()) {
+    setDocumentPureBlack(resolvedTheme === ThemeType.dark);
+  } else {
+    setDocumentPureBlack(false);
+  }
 }
 
 function onConfirmPage(props) {

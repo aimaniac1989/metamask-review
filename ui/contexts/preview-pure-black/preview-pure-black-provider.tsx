@@ -1,16 +1,18 @@
-import React from 'react';
-import { PureBlackProvider } from '@metamask/design-system-react';
+import React, { useMemo } from 'react';
+import { PureBlackContext } from '@metamask/design-system-shared';
 import { ThemeType } from '../../../shared/constants/preferences';
 import { getIsPureBlackPreviewEnabled } from '../../../shared/lib/environment';
 import { useTheme } from '../../hooks/useTheme';
 
 /**
- * Preview-only root wrapper for the design-system pure-black token experiment.
+ * Preview-only React context for the design-system pure-black token experiment.
  *
- * App-owned source of truth: compile-time `MM_PURE_BLACK_PREVIEW` (see `.metamaskrc`).
- * MMDS-owned read surface: import `usePureBlack()` from `@metamask/design-system-react`
- * anywhere you need to branch on whether pure black is actively rendering (e.g. custom
- * classNames on legacy screens). Do not add extension-specific read hooks for this.
+ * Document tokens are applied on `<html>` via `setTheme` in `ui/pages/routes/utils.js`
+ * (`data-theme` + `data-pure-black`). This provider supplies `usePureBlack()` for
+ * components that need to branch in JS — no extra DOM nodes.
+ *
+ * App-owned gate: compile-time `MM_PURE_BLACK_PREVIEW` (see `.metamaskrc`).
+ * MMDS read surface: `usePureBlack()` from `@metamask/design-system-react`.
  * @param options0
  * @param options0.children
  */
@@ -20,12 +22,15 @@ export const PreviewPureBlackProvider = ({
   children: React.ReactNode;
 }) => {
   const theme = useTheme();
-  const isPureBlackActive =
+  const isPureBlack =
     getIsPureBlackPreviewEnabled() && theme === ThemeType.dark;
+  const value = useMemo(() => ({ isPureBlack }), [isPureBlack]);
+
+  if (!getIsPureBlackPreviewEnabled()) {
+    return children;
+  }
 
   return (
-    <PureBlackProvider isPureBlack={isPureBlackActive}>
-      {children}
-    </PureBlackProvider>
+    <PureBlackContext.Provider value={value}>{children}</PureBlackContext.Provider>
   );
 };

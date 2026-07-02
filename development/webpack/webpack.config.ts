@@ -372,6 +372,18 @@ const config = {
     alias: {
       'react/jsx-runtime': require.resolve('react/jsx-runtime.js'),
       'react/jsx-dev-runtime': require.resolve('react/jsx-dev-runtime.js'),
+      ...(existsSync(
+        join(
+          __dirname,
+          '../../node_modules/@metamask-previews/design-system-shared',
+        ),
+      )
+        ? {
+            '@metamask-previews/design-system-shared': require.resolve(
+              '@metamask/design-system-shared',
+            ),
+          }
+        : {}),
     },
     // use `fallback` to redirect module requests when normal resolving fails,
     // good for polyfill-ing built-in node modules that aren't available in
