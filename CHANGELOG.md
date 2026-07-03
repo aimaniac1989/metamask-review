@@ -9,8 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [13.38.0]
 
+### Uncategorized
+
+- chore: sync stable into release/13.38.0 (#43923)
+
 ### Added
 
+- Allowed users with an enrolled passkey to reveal their Secret Recovery Phrase and export private keys using passkey (#43169)
+  verification instead of their MetaMask password.
 - Bumped `@metamask/seedless-onboarding-controller` to `v10.0.3`. (#43908)
 - Event-based transaction toasts (#43744)
 - Adds `metamask_canonical_profile_id` to support links when users consent to share data (#43798)
@@ -33,6 +39,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enabled ERC-7715 requests over the Multichain API and MetaMask Connect (#43513)
 
 ### Fixed
+
+- Fixed a bug where the Manage Tokens network filter could show a single network name while listing tokens from all enabled (#43852)
+  networks.
+- Fixed the Confirm Add Token full-page view staying open with an empty list after approving the request in another MetaMask (#43835)
+  window.
+- Title update (#43826)
+- Fixed Perps deposit activity items showing a question-mark icon and capitalized the generic "Transaction" title in (#43687)
+  transaction details.
 - Null Fixes: https://github.com/MetaMask/MetaMask-planning/issues/6927 (#43209)
 
 ## [13.37.0]
@@ -50,6 +64,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add QR error handling for invalid transaction signature (#43402)
 - Added configurable max slippage controls for perps market orders (#43357)
 
+### Changed
+
+- perf(6557): Memoize swaps default token selector and remove redundant deep/shallow equality in `useTokensToSearch` (#43609)
+
 ### Fixed
 
 - Fixed Cancel button being disabled by a "Not enough gas" check while Speed Up stayed enabled on pending transactions. (#43602)
@@ -66,12 +84,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Correct state migration to be identical to real TokenBalancesController (#43626)
 - Fixed Perps order screen back navigation after visiting Add Funds (single back tap now returns to the market detail screen, and
   trades no longer leave the user on the order screen). (#43367)
-### Changed
-
-- perf(6557): Memoize swaps default token selector and remove redundant deep/shallow equality in `useTokensToSearch` (#43609)
-
-### Fixed
-
 - Correct state migration to be identical to real TokenBalancesController (#43626)
 - Fixed Perps order screen back navigation after visiting Add Funds (single back tap now returns to the market detail screen, and trades no longer leave the user on the order screen). (#43367)
 - Fixed product announcement notification links opening MetaMask deeplinks externally before routing. (#42805)
