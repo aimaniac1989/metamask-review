@@ -1,7 +1,6 @@
 import React from 'react';
 import { PureBlackProvider } from '@metamask/design-system-react';
-import { ThemeType } from '../../../shared/constants/preferences';
-import { useTheme } from '../../hooks/useTheme';
+// Keep PureBlack in sync with DOM `data-pure-black` attribute
 
 /**
  * Applies MMDS pure-black (OLED) dark mode when the resolved theme is dark.
@@ -17,10 +16,36 @@ export const AppPureBlackProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const theme = useTheme();
+  const [isPureBlack, setIsPureBlack] = React.useState<boolean>(() => {
+    try {
+      return document?.documentElement?.hasAttribute('data-pure-black') ?? false;
+    } catch {
+      return false;
+    }
+  });
+
+  React.useEffect(() => {
+    const el = document.documentElement;
+    const update = () => {
+      setIsPureBlack(el.hasAttribute('data-pure-black'));
+    };
+    update();
+
+    const observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'data-pure-black') {
+          update();
+          break;
+        }
+      }
+    });
+
+    observer.observe(el, { attributes: true, attributeFilter: ['data-pure-black'] });
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <PureBlackProvider isPureBlack={theme === ThemeType.dark}>
+    <PureBlackProvider isPureBlack={isPureBlack}>
       {children}
     </PureBlackProvider>
   );
