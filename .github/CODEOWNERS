@@ -290,6 +290,8 @@ app/scripts/wallet-init/instance-options/keyring-controller* @MetaMask/accounts-
 app/scripts/wallet-init/instance-options/network-controller* @MetaMask/core-platform
 app/scripts/wallet-init/instance-options/remote-feature-flag-controller* @MetaMask/extension-platform @MetaMask/core-platform
 app/scripts/wallet-init/instance-options/storage-service* @MetaMask/extension-platform @MetaMask/core-platform
+app/scripts/wallet-init/instance-options/transaction-controller* @MetaMask/confirmations
+app/scripts/wallet-init/messengers/transaction-controller-messenger* @MetaMask/confirmations
 
 # Snapshots – no code owners assigned
 # This allows anyone with write access to approve changes to any *.snap files.
