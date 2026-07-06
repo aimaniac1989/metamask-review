@@ -1,4 +1,9 @@
-import { QuoteResponse } from '@metamask/bridge-controller';
+import {
+  DeepPartial,
+  QuoteResponseV1,
+  TxData,
+  validateQuoteResponseV1,
+} from '@metamask/bridge-controller';
 import { SimulationTokenStandard } from '@metamask/transaction-controller';
 
 import {
@@ -9,7 +14,7 @@ import {
   checkValidSingleOrBatchTransaction,
 } from './dapp-swap-comparison-utils';
 
-const MOCK_QUOTES = [
+const MOCK_QUOTES: DeepPartial<QuoteResponseV1<TxData, TxData>>[] = [
   {
     quote: {
       requestId:
@@ -58,6 +63,7 @@ const MOCK_QUOTES = [
     estimatedProcessingTimeInSeconds: 0,
   },
 ];
+MOCK_QUOTES.map(validateQuoteResponseV1);
 
 describe('dapp-swap utils', () => {
   describe('parseTransactionData', () => {
@@ -123,7 +129,7 @@ describe('dapp-swap utils', () => {
   describe('getBestQuote', () => {
     it('returns the best quote', () => {
       const result = getBestQuote(
-        MOCK_QUOTES as unknown as QuoteResponse[],
+        MOCK_QUOTES,
         '0x32',
         (val) => val,
         (val) => val.toString(),
@@ -134,7 +140,7 @@ describe('dapp-swap utils', () => {
 
     it('bestFilteredQuote is undefined if no quote has minimum amount greater than confirmation', () => {
       const result = getBestQuote(
-        MOCK_QUOTES as unknown as QuoteResponse[],
+        MOCK_QUOTES,
         '0x64',
         (val) => val,
         (val) => val.toString(),
@@ -145,7 +151,7 @@ describe('dapp-swap utils', () => {
 
     it('returns undefined for empty quotes array', () => {
       const result = getBestQuote(
-        [] as unknown as QuoteResponse[],
+        [],
         '0x32',
         (val) => val,
         (val) => val.toString(),

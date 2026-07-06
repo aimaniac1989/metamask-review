@@ -6928,7 +6928,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/keyring-controller@npm:^27.0.0, @metamask/keyring-controller@npm:^27.1.0":
+"@metamask/keyring-controller@npm:^27.0.0":
   version: 27.1.0
   resolution: "@metamask/keyring-controller@npm:27.1.0"
   dependencies:

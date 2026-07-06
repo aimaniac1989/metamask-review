@@ -286,6 +286,7 @@ const PrepareBridgePage = ({
       // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
       // eslint-disable-next-line @typescript-eslint/naming-convention
       usd_amount_source: fromAmountInCurrency.usd.toNumber(),
+      // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
       // eslint-disable-next-line @typescript-eslint/naming-convention
       feature_id: FeatureId.UNIFIED_SWAP_BRIDGE,
     };
@@ -439,7 +440,7 @@ const PrepareBridgePage = ({
               }
               onClick={() => {
                 const previousDestAmount =
-                  unvalidatedQuote?.toTokenAmount?.amount;
+                  unvalidatedQuote?.quote.dest.normalizedAmount;
                 dispatch(setSelectedQuote(null));
                 if (!toChain || !fromToken || !toToken) {
                   return;
@@ -476,6 +477,7 @@ const PrepareBridgePage = ({
                       // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
                       // eslint-disable-next-line @typescript-eslint/naming-convention
                       security_warnings: securityWarnings,
+                      // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
                       // eslint-disable-next-line @typescript-eslint/naming-convention
                       feature_id: FeatureId.UNIFIED_SWAP_BRIDGE,
                     },
@@ -527,20 +529,20 @@ const PrepareBridgePage = ({
             }}
             networks={toChains}
             amountInFiat={
-              unvalidatedQuote?.toTokenAmount?.valueInCurrency ?? undefined
+              unvalidatedQuote?.quote.dest.valueInCurrency ?? undefined
             }
             amountFieldProps={{
               testId: 'to-amount',
               readOnly: true,
               disabled: true,
-              value: unvalidatedQuote?.toTokenAmount?.amount
+              value: unvalidatedQuote?.quote.dest.normalizedAmount
                 ? formatTokenAmount(
                     locale,
-                    unvalidatedQuote.toTokenAmount.amount,
+                    unvalidatedQuote.quote.dest.normalizedAmount,
                   )
                 : '0',
               autoFocus: false,
-              className: unvalidatedQuote?.toTokenAmount?.amount
+              className: unvalidatedQuote?.quote.dest.normalizedAmount
                 ? 'amount-input defined'
                 : 'amount-input',
             }}
@@ -621,6 +623,7 @@ const PrepareBridgePage = ({
                   // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
                   // eslint-disable-next-line @typescript-eslint/naming-convention
                   usd_amount_source: fromAmountInCurrency.usd.toNumber(),
+                  // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
                   // eslint-disable-next-line @typescript-eslint/naming-convention
                   feature_id: FeatureId.UNIFIED_SWAP_BRIDGE,
                 });

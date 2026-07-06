@@ -17,15 +17,12 @@
  * @param locale - The locale string to return for `getIntlLocale`.
  */
 export function seedCurrencyLocaleSelectors(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   mockUseSelector: jest.Mock<any, any>,
   currency = 'USD',
   locale = 'en-US',
 ): void {
   mockUseSelector.mockReset();
-  mockUseSelector
-    .mockReturnValueOnce(currency as never)
-    .mockReturnValueOnce(locale as never);
+  mockUseSelector.mockReturnValueOnce(currency).mockReturnValueOnce(locale);
 }
 
 /**
@@ -40,7 +37,6 @@ export function seedCurrencyLocaleSelectors(
  * @param mockUseSelector - The jest.Mock replacing `useSelector`.
  */
 export function mockUseSelectorPassthrough(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   mockUseSelector: jest.Mock<any, any>,
 ): void {
   mockUseSelector.mockImplementation(

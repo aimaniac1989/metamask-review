@@ -98,11 +98,6 @@ export function formatNetworkFee(
   return formatCurrency(amount.toString(), currency, 2);
 }
 
-export const formatProviderLabel = (args?: {
-  bridgeId: QuoteResponse['quote']['bridgeId'];
-  bridges: QuoteResponse['quote']['bridges'];
-}): `${string}_${string}` => `${args?.bridgeId}_${args?.bridges[0]}`;
-
 export const sanitizeAmountInput = (
   textToSanitize: string,
   dropNumbersAfterSecondDecimal = true,
@@ -154,7 +149,7 @@ export const isQuoteExpiredOrInvalid = ({
   // 2. Ensure the quote still matches the currently selected destination asset / chain
   if (activeQuote && toToken) {
     return (
-      activeQuote.quote.destAsset.assetId.toLowerCase() !==
+      activeQuote.quote.dest.asset.assetId.toLowerCase() !==
       toToken.assetId.toLowerCase()
     );
   }
@@ -188,11 +183,9 @@ export const bpsToPercentage = (
 
 export const readMmFee = (quote: QuoteResponse) => {
   // Get the fee percentage from the quote or fallback to default
-  // @ts-expect-error: controller types are not up to date yet
-  const quoteBpsFee = quote.quote.feeData?.metabridge?.quoteBpsFee;
-  // @ts-expect-error: controller types are not up to date yet
-  const baseBpsFee = quote.quote.feeData?.metabridge?.baseBpsFee;
-  const discountType = quote.quote.feeData?.metabridge?.discountType;
+  const quoteBpsFee = quote.quote.feeData?.metabridge?.[0]?.quoteBpsFee;
+  const baseBpsFee = quote.quote.feeData?.metabridge?.[0]?.baseBpsFee;
+  const discountType = quote.quote.feeData?.metabridge?.[0]?.discountType;
   const quoteFeePercentage = bpsToPercentage(quoteBpsFee);
   const baseFeePercentage = bpsToPercentage(baseBpsFee);
 

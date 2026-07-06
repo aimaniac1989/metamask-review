@@ -4,12 +4,7 @@ import {
   getNativeAssetForChainId,
   type QuoteResponse,
 } from '@metamask/bridge-controller';
-import {
-  formatTokenAmount,
-  formatCurrencyAmount,
-  formatProviderLabel,
-  readMmFee,
-} from './quote';
+import { formatTokenAmount, formatCurrencyAmount, readMmFee } from './quote';
 
 describe('Bridge quote utils', () => {
   describe('getNativeAssetForChainId', () => {

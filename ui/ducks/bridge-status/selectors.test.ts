@@ -92,14 +92,9 @@ describe('bridge-status selectors', () => {
         },
       };
 
-      expect(
-        selectBridgeHistoryForOriginalTxMetaId(
-          // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31973
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          state as any,
-          'tx-meta-id',
-        ),
-      ).toBe(matchingBridgeHistoryItem);
+      expect(selectBridgeHistoryForOriginalTxMetaId(state, 'tx-meta-id')).toBe(
+        matchingBridgeHistoryItem,
+      );
     });
 
     it('returns undefined when there is no match', () => {
@@ -114,12 +109,7 @@ describe('bridge-status selectors', () => {
       };
 
       expect(
-        selectBridgeHistoryForOriginalTxMetaId(
-          // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31973
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          state as any,
-          'tx-meta-id',
-        ),
+        selectBridgeHistoryForOriginalTxMetaId(state, 'tx-meta-id'),
       ).toBeUndefined();
     });
   });
@@ -142,7 +132,7 @@ describe('bridge-status selectors', () => {
         selectBridgeHistoryForApprovalTxId(
           // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31973
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          state as any,
+          state,
           '0xabc123',
         ),
       ).toBe(matchingBridgeHistoryItem);
@@ -165,10 +155,10 @@ describe('bridge-status selectors', () => {
         selectBridgeHistoryForApprovalTxId(
           // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31973
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          state as any,
+          state,
           // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31973
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          42 as any,
+          42,
         ),
       ).toBe(matchingBridgeHistoryItem);
     });

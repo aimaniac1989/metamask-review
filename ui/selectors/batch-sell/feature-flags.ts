@@ -25,7 +25,7 @@ export type BatchSellFeatureFlag = {
  */
 export const getIsBatchSellEnabled = createSelector(
   getRemoteFeatureFlags,
-  (state) => isHardwareWallet(state as never),
+  (state) => isHardwareWallet(state),
   (remoteFeatureFlags, hardwareWalletSelected) =>
     Boolean(remoteFeatureFlags.batchSell?.enabled) && !hardwareWalletSelected,
 );

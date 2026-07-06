@@ -215,11 +215,13 @@ describe('ui/pages/bridge/hooks/useSubmitBridgeTransaction', () => {
 
       await act(async () => {
         await result.current.submitBridgeTransaction(
-          // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31973
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          DummyQuotesWithApproval.ETH_11_USDC_TO_ARB[0] as any,
+          DummyQuotesWithApproval.ETH_11_USDC_TO_ARB[0],
         );
       });
+
+      expect(DummyQuotesWithApproval.ETH_11_USDC_TO_ARB[0].quote.dest.usd).toBe(
+        '12',
+      );
 
       expect(submitTxSpy.mock.calls).toMatchSnapshot();
       expect(mockUseNavigate.mock.calls).toMatchInlineSnapshot(`
@@ -248,11 +250,13 @@ describe('ui/pages/bridge/hooks/useSubmitBridgeTransaction', () => {
 
       await act(async () => {
         await result.current.submitBridgeTransaction(
-          // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31973
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          DummyQuotesNoApproval.OP_0_005_ETH_TO_ARB[0] as any,
+          DummyQuotesNoApproval.OP_0_005_ETH_TO_ARB[0],
         );
       });
+
+      expect(DummyQuotesNoApproval.OP_0_005_ETH_TO_ARB[0].quote.dest.usd).toBe(
+        '12',
+      );
 
       expect(submitTxSpy.mock.calls).toMatchSnapshot();
       expect(result.current.isSubmitting).toBe(false);
@@ -270,7 +274,7 @@ describe('ui/pages/bridge/hooks/useSubmitBridgeTransaction', () => {
         await result.current.submitBridgeTransaction(
           // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31973
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          DummyQuotesWithApproval.ETH_11_USDC_TO_ARB[0] as any,
+          DummyQuotesWithApproval.ETH_11_USDC_TO_ARB[0],
         );
       });
 
@@ -316,7 +320,7 @@ describe('ui/pages/bridge/hooks/useSubmitBridgeTransaction', () => {
         await result.current.submitBridgeTransaction(
           // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31973
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          DummyQuotesWithApproval.ETH_11_USDC_TO_ARB[0] as any,
+          DummyQuotesWithApproval.ETH_11_USDC_TO_ARB[0],
         );
       });
 
@@ -366,7 +370,7 @@ describe('ui/pages/bridge/hooks/useSubmitBridgeTransaction', () => {
         await result.current.submitBridgeTransaction(
           // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31973
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          DummyQuotesWithApproval.ETH_11_USDC_TO_ARB[0] as any,
+          DummyQuotesWithApproval.ETH_11_USDC_TO_ARB[0],
         );
       });
 
@@ -398,7 +402,7 @@ describe('ui/pages/bridge/hooks/useSubmitBridgeTransaction', () => {
         await result.current.submitBridgeTransaction(
           // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31973
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          quoteWithIntent as any,
+          quoteWithIntent,
         );
       });
 
@@ -445,7 +449,7 @@ describe('ui/pages/bridge/hooks/useSubmitBridgeTransaction', () => {
         await result.current.submitBridgeTransaction(
           // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31973
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          quoteWithIntent as any,
+          quoteWithIntent,
         );
       });
 
@@ -488,7 +492,7 @@ describe('ui/pages/bridge/hooks/useSubmitBridgeTransaction', () => {
         await result.current.submitBridgeTransaction(
           // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31973
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          quoteWithIntent as any,
+          quoteWithIntent,
         );
       });
 

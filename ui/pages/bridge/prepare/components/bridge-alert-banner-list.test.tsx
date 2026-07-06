@@ -3,17 +3,16 @@ import React from 'react';
 import type { Provider } from '@metamask/network-controller';
 import {
   formatChainIdToCaip,
-  QuoteResponse,
   QuoteStreamCompleteReason,
   RequestStatus,
+  BridgeAssetSecurityDataType,
 } from '@metamask/bridge-controller';
 import * as reactRouterUtils from 'react-router-dom';
-import { BridgeAssetSecurityDataType } from '../../utils/tokens';
 import { renderWithProvider } from '../../../../../test/lib/render-helpers-navigate';
 import { toAssetId } from '../../../../../shared/lib/asset-utils';
 import { createBridgeMockStore } from '../../../../../test/data/bridge/mock-bridge-store';
 import { CHAIN_IDS } from '../../../../../shared/constants/network';
-import mockBridgeQuotesErc20Erc20 from '../../../../../test/data/bridge/mock-quotes-erc20-erc20.json';
+import mockBridgeQuotesErc20Erc20 from '../../../../../test/data/bridge/mock-quotes-erc20-erc20';
 import { createTestProviderTools } from '../../../../../test/stub/provider';
 import { setBackgroundConnection } from '../../../../store/background-connection';
 import configureStore from '../../../../store/store';
@@ -210,12 +209,12 @@ describe('BridgeAlertBannerList', () => {
           quotesInitialLoadTime: Date.now(),
           quotesLoadingStatus: RequestStatus.FETCHED,
           quotesRefreshCount: 1,
-          quotes: mockBridgeQuotesErc20Erc20 as unknown as QuoteResponse[],
+          quotes: mockBridgeQuotesErc20Erc20,
           quoteRequest: {
             srcTokenAddress: '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984',
             destTokenAddress: '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984',
-            srcChainId: 1,
-            destChainId: 10,
+            srcChainId: 10,
+            destChainId: 137,
             walletAddress: '0x123',
             slippage: 0.5,
             srcTokenAmount: '1',
@@ -282,7 +281,7 @@ describe('BridgeAlertBannerList', () => {
           quotesInitialLoadTime: Date.now(),
           quotesLoadingStatus: RequestStatus.FETCHED,
           quotesRefreshCount: 1,
-          quotes: mockBridgeQuotesErc20Erc20 as unknown as QuoteResponse[],
+          quotes: mockBridgeQuotesErc20Erc20,
           quoteRequest: {
             srcTokenAddress: '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984',
             destTokenAddress: '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984',
@@ -381,9 +380,15 @@ describe('BridgeAlertBannerList', () => {
             ...quote,
             quote: {
               ...quote.quote,
-              priceData: { priceImpact: '0.05' },
+              priceData: {
+                ...quote.quote.priceData,
+                priceImpact: {
+                  ...quote.quote.priceData?.priceImpact,
+                  amount: '0.05',
+                },
+              },
             },
-          })) as unknown as QuoteResponse[],
+          })),
           quoteRequest: {
             srcTokenAddress: '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984',
             destTokenAddress: '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984',

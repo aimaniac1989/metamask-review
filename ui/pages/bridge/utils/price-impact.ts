@@ -1,3 +1,4 @@
+import { calcPriceImpact, QuoteResponse } from '@metamask/bridge-controller';
 import { formatCurrencyAmount } from './quote';
 
 /**
@@ -55,31 +56,16 @@ export function formatPriceImpactPercentage(
  * @returns Formatted fiat impact string, or `undefined` when either fiat value is unavailable.
  */
 export function formatPriceImpactFiat(
-  activeQuote:
-    | {
-        sentAmount?: { valueInCurrency?: string | number | null } | null;
-        toTokenAmount?: { valueInCurrency?: string | number | null } | null;
-      }
-    | null
-    | undefined,
+  activeQuote: QuoteResponse | null | undefined,
   currentCurrency: string,
 ): string | undefined {
   if (!activeQuote) {
     return undefined;
   }
 
-  const sourceFiat = activeQuote.sentAmount?.valueInCurrency;
-  const destFiat = activeQuote.toTokenAmount?.valueInCurrency;
-
-  if (
-    sourceFiat === null ||
-    sourceFiat === undefined ||
-    destFiat === null ||
-    destFiat === undefined
-  ) {
+  const diff = calcPriceImpact(activeQuote)?.valueInCurrency;
+  if (!diff) {
     return undefined;
   }
-
-  const diff = Math.abs(Number(sourceFiat) - Number(destFiat));
   return formatCurrencyAmount(String(diff), currentCurrency, 2);
 }

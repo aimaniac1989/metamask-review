@@ -6,6 +6,7 @@ import {
   BatchSellQuotesResults,
   SendAssetEntry,
 } from '../types';
+import { calcTokenValue } from '../../../../../../shared/lib/swaps-utils';
 
 export const buildResults = ({
   controllerResult,
@@ -63,12 +64,17 @@ export const buildResults = ({
           asset: entry.asset,
           quote: recommendedQuote,
           slippagePercent: entry.slippagePercent,
-          receivedAmount: toFinite(recommendedQuote.toTokenAmount?.amount),
+          receivedAmount: toFinite(
+            recommendedQuote.quote.dest.normalizedAmount,
+          ),
           receivedAmountFiat: toFinite(
-            recommendedQuote.toTokenAmount?.valueInCurrency,
+            recommendedQuote.quote.dest.valueInCurrency,
           ),
           minimumReceivedAmount: toFinite(
-            recommendedQuote.minToTokenAmount?.amount,
+            calcTokenValue(
+              recommendedQuote.quote.dest.minAmount,
+              recommendedQuote.quote.dest.asset.decimals,
+            ),
           ),
           hasQuote: true,
           isLoadingQuote: false,

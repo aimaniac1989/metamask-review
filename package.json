@@ -160,6 +160,9 @@
     "yarn-binary:hydrate": "corepack hydrate .yarn/yarn-corepack.tgz --activate"
   },
   "resolutions": {
+    "@metamask/bridge-controller": "file:../core/packages/bridge-controller",
+    "@metamask/transaction-pay-controller>@metamask/bridge-controller": "file:../core/packages/bridge-controller",
+    "@metamask/bridge-status-controller": "file:../core/packages/bridge-status-controller",
     "@grpc/grpc-js": "^1.9.16",
     "@metamask/messenger@npm:^0.3.0": "^1.2.0",
     "@metamask/network-controller": "34.0.0",
@@ -349,8 +352,8 @@
     "@metamask/base-controller": "^9.0.1",
     "@metamask/bitcoin-wallet-snap": "^1.14.0",
     "@metamask/bitcoin-wallet-standard": "^1.1.0",
-    "@metamask/bridge-controller": "^77.2.0",
-    "@metamask/bridge-status-controller": "^74.0.2",
+    "@metamask/bridge-controller": "file:../core-1/packages/bridge-controller",
+    "@metamask/bridge-status-controller": "file:../core-1/packages/bridge-status-controller",
     "@metamask/browser-passworder": "^6.0.0",
     "@metamask/chain-agnostic-permission": "^1.6.2",
     "@metamask/claims-controller": "^0.4.2",

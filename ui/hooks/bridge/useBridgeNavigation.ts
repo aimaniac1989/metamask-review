@@ -13,12 +13,13 @@ import {
 } from '@metamask/utils';
 import {
   AssetType,
-  FeatureId,
   formatAddressToCaipReference,
   formatChainIdToHex,
   isNativeAddress,
   isNonEvmChainId,
   UnifiedSwapBridgeEventName,
+  FeatureId,
+  MinimalAsset,
 } from '@metamask/bridge-controller';
 import { BridgeQueryParams } from '../../../shared/lib/deep-links/routes/swap';
 import {
@@ -32,7 +33,6 @@ import {
   TRANSACTION_SHIELD_ROUTE,
 } from '../../helpers/constants/routes';
 import { getBridgeState } from '../../ducks/bridge/selectors';
-import type { MinimalAsset } from '../../pages/bridge/utils/tokens';
 import type { BridgeState, BridgeToken } from '../../ducks/bridge/types';
 import {
   resetBridgeController,
@@ -153,13 +153,11 @@ export const useBridgeNavigation = () => {
         dispatch(
           trackUnifiedSwapBridgeEvent(UnifiedSwapBridgeEventName.PageViewed, {
             // eslint-disable-next-line @typescript-eslint/naming-convention
-            {
-              feature_id: FeatureId.UNIFIED_SWAP_BRIDGE,
-              // @ts-expect-error once @metamask/bridge-controller is updated
-              // eslint-disable-next-line @typescript-eslint/naming-convention
-              environment_type: getEnvironmentType(),
-            },
-          ),
+            feature_id: FeatureId.UNIFIED_SWAP_BRIDGE,
+            // @ts-expect-error once @metamask/bridge-controller is updated
+            // eslint-disable-next-line @typescript-eslint/naming-convention
+            environment_type: getEnvironmentType(),
+          }),
         );
       navigate(
         {

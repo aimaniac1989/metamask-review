@@ -1,5 +1,6 @@
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { useMemo } from 'react';
+import { parseCaipAssetType } from '@metamask/utils';
 import {
   getActiveQuoteInsufficientNativeReserveError,
   type BridgeAppState,
@@ -78,8 +79,10 @@ export const useBridgeAlerts = () => {
   })
     ? undefined
     : unvalidatedQuote;
-  const isSwap =
-    activeQuote?.quote.srcChainId === activeQuote?.quote.destChainId;
+  const isSwap = activeQuote
+    ? activeQuote.chainId ===
+      parseCaipAssetType(activeQuote.quote.dest.asset.assetId).chainId
+    : false;
 
   return useMemo(() => {
     const alertsById: Partial<Record<BridgeAlert['id'], BridgeAlert>> = {};

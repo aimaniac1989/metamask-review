@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  formatChainIdToCaip,
   getQuotesReceivedProperties,
   isCrossChain,
 } from '@metamask/bridge-controller';
-import type { QuoteMetadata, QuoteResponse } from '@metamask/bridge-controller';
+import type { QuoteResponse } from '@metamask/bridge-controller';
 import { useNavigate } from 'react-router-dom';
 import { isHardwareWallet } from '../../../shared/lib/selectors/keyring';
 import { captureException } from '../../../shared/lib/sentry';
+import { parseCaipAssetType } from '@metamask/utils';
+import { getExtensionSkipTransactionStatusPage } from '../../../../shared/lib/selectors/smart-transactions';
 import {
   submitBridgeIntent,
   submitBridgeTx,
@@ -72,9 +73,7 @@ export default function useSubmitBridgeTransaction() {
   const { ensureDeviceReady } = useHardwareWalletActions();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const submitBridgeTransaction = async (
-    quoteResponse: QuoteResponse & QuoteMetadata,
-  ) => {
+  const submitBridgeTransaction = async (quoteResponse: QuoteResponse) => {
     setIsSubmitting(true);
 
     try {
@@ -91,15 +90,12 @@ export default function useSubmitBridgeTransaction() {
         );
       }
 
-      if (
-        isCrossChain(
-          quoteResponse.quote.srcChainId,
-          quoteResponse.quote.destChainId,
-        )
-      ) {
-        enableMissingNetwork(
-          formatChainIdToCaip(quoteResponse.quote.destChainId),
-        );
+      const destChainId = parseCaipAssetType(
+        quoteResponse.quote.dest.asset.assetId,
+      ).chainId;
+
+      if (isCrossChain(quoteResponse.chainId, destChainId)) {
+        enableMissingNetwork(destChainId);
       }
     } catch {
       setIsSubmitting(false);
