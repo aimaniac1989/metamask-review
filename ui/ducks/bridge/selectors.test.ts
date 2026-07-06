@@ -87,7 +87,7 @@ describe('Bridge selectors', () => {
   const getErc20QuoteAssetExchangeRates = (usdExchangeRate: string) =>
     Object.fromEntries(
       mockErc20Erc20Quotes.map(({ quote }) => [
-        quote.srcAsset.assetId.toLowerCase(),
+        quote.src.asset.assetId.toLowerCase(),
         {
           exchangeRate: '1',
           usdExchangeRate,

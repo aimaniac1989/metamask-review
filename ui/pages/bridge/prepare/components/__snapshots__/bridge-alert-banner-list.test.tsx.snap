@@ -57,7 +57,7 @@ exports[`BridgeAlertBannerList should render the insufficient-gas alert when ins
   data-testid="bridge-banner-alerts"
 >
   <div
-    class="flex flex-row gap-2 items-start p-3 pl-2 bg-error-muted rounded-sm border-l-4 border-error-default"
+    class="flex flex-row gap-4 items-start px-4 py-3 bg-error-muted rounded-xl"
     data-testid="bridge-insufficient-gas"
   >
     <svg

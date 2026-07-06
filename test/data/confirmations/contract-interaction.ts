@@ -282,6 +282,24 @@ export const mockBridgeQuotes = [
       requestId:
         '0xe00805b32ac0b8ef9a2cb1d2b18a3c3eed1a9190fdfa8e99b718df90d9070026',
       bridgeId: 'kyberswap',
+      srcAsset: {
+        symbol: 'USDC',
+        name: 'USD Coin',
+        decimals: 6,
+        address: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+        assetId:
+          'eip155:42161/erc20:0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+        chainId: 42161,
+      },
+      destAsset: {
+        symbol: 'USDT',
+        name: 'Tether',
+        decimals: 6,
+        address: '0x9dDA6Ef3D919c9bC8885D5560999A3640431e8e6',
+        assetId:
+          'eip155:42161/erc20:0x9dDA6Ef3D919c9bC8885D5560999A3640431e8e6',
+        chainId: 42161,
+      },
       srcChainId: 42161,
       destChainId: 42161,
       aggregator: 'kyberswap',
@@ -293,6 +311,23 @@ export const mockBridgeQuotes = [
       destWalletAddress: '0x178239802520a9C99DCBD791f81326B70298d629',
       bridges: ['kyberswap'],
       protocols: ['kyberswap'],
+      feeData: {
+        metabridge: {
+          amount: '0',
+          asset: {
+            symbol: 'USDC',
+            name: 'USD Coin',
+            decimals: 6,
+            address: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+            assetId:
+              'eip155:42161/erc20:0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+            chainId: 42161,
+          },
+          baseBpsFee: 0,
+          quoteBpsFee: 0,
+          discountType: null,
+        },
+      },
       steps: [],
       slippage: 2,
     },
@@ -326,19 +361,51 @@ export const mockBridgeQuotes = [
       srcTokenAmount: '9913',
       destTokenAmount: '11104',
       minDestTokenAmount: '10881',
+      srcAsset: {
+        symbol: 'USDC',
+        name: 'USD Coin',
+        decimals: 6,
+        address: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+        assetId:
+          'eip155:42161/erc20:0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+        chainId: 42161,
+      },
+      destAsset: {
+        symbol: 'USDT',
+        name: 'Tether',
+        decimals: 6,
+        address: '0x9dDA6Ef3D919c9bC8885D5560999A3640431e8e6',
+        assetId:
+          'eip155:42161/erc20:0x9dDA6Ef3D919c9bC8885D5560999A3640431e8e6',
+        chainId: 42161,
+      },
       walletAddress: '0x178239802520a9C99DCBD791f81326B70298d629',
       destWalletAddress: '0x178239802520a9C99DCBD791f81326B70298d629',
       bridges: ['0x'],
       protocols: ['0x'],
       steps: [],
       slippage: 2,
+      feeData: {
+        metabridge: {
+          amount: '0',
+          asset: {
+            symbol: 'USDC',
+            name: 'USD Coin',
+            decimals: 6,
+            address: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+            assetId:
+              'eip155:42161/erc20:0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+            chainId: 42161,
+          },
+        },
+      },
     },
     approval: {
       chainId: 42161,
       to: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
       from: '0x178239802520a9C99DCBD791f81326B70298d629',
       value: '0x0',
-      data: '',
+      data: '0x',
       gasLimit: 63109,
     },
     trade: {
@@ -346,7 +413,7 @@ export const mockBridgeQuotes = [
       to: '0x9dDA6Ef3D919c9bC8885D5560999A3640431e8e6',
       from: '0x178239802520a9C99DCBD791f81326B70298d629',
       value: '0x0',
-      data: '',
+      data: '0x',
       gasLimit: 596053,
     },
     estimatedProcessingTimeInSeconds: 0,
@@ -367,6 +434,41 @@ export const mockBridgeQuotes = [
       destWalletAddress: '0x178239802520a9C99DCBD791f81326B70298d629',
       bridges: ['openocean'],
       protocols: ['openocean'],
+      srcAsset: {
+        symbol: 'USDC',
+        name: 'USD Coin',
+        decimals: 6,
+        address: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+        assetId:
+          'eip155:42161/erc20:0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+        chainId: 42161,
+      },
+      destAsset: {
+        symbol: 'USDT',
+        name: 'Tether',
+        decimals: 6,
+        address: '0x9dDA6Ef3D919c9bC8885D5560999A3640431e8e6',
+        assetId:
+          'eip155:42161/erc20:0x9dDA6Ef3D919c9bC8885D5560999A3640431e8e6',
+        chainId: 42161,
+      },
+      feeData: {
+        metabridge: {
+          amount: '0',
+          asset: {
+            symbol: 'USDC',
+            name: 'USD Coin',
+            decimals: 6,
+            address: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+            assetId:
+              'eip155:42161/erc20:0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+            chainId: 42161,
+          },
+          baseBpsFee: 0,
+          quoteBpsFee: 0,
+          discountType: null,
+        },
+      },
       steps: [],
       slippage: 2,
     },
@@ -375,7 +477,7 @@ export const mockBridgeQuotes = [
       to: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
       from: '0x178239802520a9C99DCBD791f81326B70298d629',
       value: '0x0',
-      data: '',
+      data: '0x',
       gasLimit: 63109,
     },
     trade: {
@@ -383,7 +485,7 @@ export const mockBridgeQuotes = [
       to: '0x9dDA6Ef3D919c9bC8885D5560999A3640431e8e6',
       from: '0x178239802520a9C99DCBD791f81326B70298d629',
       value: '0x0',
-      data: '',
+      data: '0x',
       gasLimit: 679877,
     },
     estimatedProcessingTimeInSeconds: 0,
@@ -405,13 +507,48 @@ export const mockBridgeQuotes = [
       protocols: ['okx'],
       steps: [],
       slippage: 2,
+      srcAsset: {
+        symbol: 'USDC',
+        name: 'USD Coin',
+        decimals: 6,
+        address: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+        assetId:
+          'eip155:42161/erc20:0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+        chainId: 42161,
+      },
+      destAsset: {
+        symbol: 'USDT',
+        name: 'Tether',
+        decimals: 6,
+        address: '0x9dDA6Ef3D919c9bC8885D5560999A3640431e8e6',
+        assetId:
+          'eip155:42161/erc20:0x9dDA6Ef3D919c9bC8885D5560999A3640431e8e6',
+        chainId: 42161,
+      },
+      feeData: {
+        metabridge: {
+          amount: '0',
+          asset: {
+            symbol: 'USDC',
+            name: 'USD Coin',
+            decimals: 6,
+            address: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+            assetId:
+              'eip155:42161/erc20:0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+            chainId: 42161,
+          },
+          baseBpsFee: 0,
+          quoteBpsFee: 0,
+          discountType: null,
+        },
+      },
     },
     approval: {
       chainId: 42161,
       to: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
       from: '0x178239802520a9C99DCBD791f81326B70298d629',
       value: '0x0',
-      data: '',
+      data: '0x',
       gasLimit: 62000,
     },
     trade: {
@@ -419,7 +556,7 @@ export const mockBridgeQuotes = [
       to: '0x9dDA6Ef3D919c9bC8885D5560999A3640431e8e6',
       from: '0x178239802520a9C99DCBD791f81326B70298d629',
       value: '0x0',
-      data: '',
+      data: '0x',
       gasLimit: 80000,
     },
     estimatedProcessingTimeInSeconds: 0,

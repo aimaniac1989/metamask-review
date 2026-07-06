@@ -20,7 +20,7 @@ const createDiscountedQuoteWithoutApproval = () =>
           quoteBpsFee: 50,
           baseBpsFee: 87.5,
           discountType: 'vip',
-        },
+        })),
       },
     },
   }));

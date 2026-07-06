@@ -25,7 +25,7 @@ setBackgroundConnection({
 const createDiscountedQuotes = (
   discountType?: string | null,
 ): QuoteResponse[] =>
-  (mockBridgeQuotesErc20Erc20).map((quote) => ({
+  mockBridgeQuotesErc20Erc20.map((quote) => ({
     ...quote,
     quote: {
       ...quote.quote,
@@ -37,7 +37,7 @@ const createDiscountedQuotes = (
           quoteBpsFee: 50,
           baseBpsFee: 87.5,
           ...(discountType !== undefined && { discountType }),
-        },
+        })),
       },
     },
   }));
@@ -123,11 +123,7 @@ describe('BridgeDiscountFeeMessage', () => {
   it('renders null when the active quote is not discounted', () => {
     const { container } = renderWithProvider(
       <BridgeDiscountFeeMessage />,
-      configureStore(
-        createBridgeStoreWithQuotes(
-          mockBridgeQuotesErc20Erc20,
-        ),
-      ),
+      configureStore(createBridgeStoreWithQuotes(mockBridgeQuotesErc20Erc20)),
     );
 
     expect(container).toBeEmptyDOMElement();

@@ -1,6 +1,7 @@
 import { BigNumber } from 'bignumber.js';
 import {
   ChainId,
+  formatProviderLabel,
   getNativeAssetForChainId,
   type QuoteResponse,
 } from '@metamask/bridge-controller';
@@ -131,12 +132,6 @@ describe('Bridge quote utils', () => {
       expect(result).toBe('bridge1_provider1');
     });
 
-    it('should handle undefined args', () => {
-      const result = formatProviderLabel(undefined);
-
-      expect(result).toBe('undefined_undefined');
-    });
-
     it('should handle empty bridges array', () => {
       const args = {
         bridgeId: 'bridge1',
@@ -162,11 +157,13 @@ describe('Bridge quote utils', () => {
       ({
         quote: {
           feeData: {
-            metabridge: {
-              baseBpsFee,
-              discountType,
-              quoteBpsFee,
-            },
+            metabridge: [
+              {
+                baseBpsFee,
+                discountType,
+                quoteBpsFee,
+              },
+            ],
           },
         },
       }) as unknown as QuoteResponse;
