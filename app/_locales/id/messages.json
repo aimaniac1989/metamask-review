@@ -466,6 +466,14 @@
     "message": "Dicetak senilai $1",
     "description": "$1 is the NFT token symbol"
   },
+  "activity_nftSell_pending_title": {
+    "message": "Menjual $1",
+    "description": "$1 is the NFT token symbol"
+  },
+  "activity_nftSell_success_title": {
+    "message": "$1 dijual",
+    "description": "$1 is the NFT token symbol"
+  },
   "activity_perpsAddFunds_failed_description": {
     "message": "Pendanaan gagal"
   },
@@ -1041,6 +1049,9 @@
   "addCustomToken": {
     "message": "Tambahkan token khusus"
   },
+  "addDevice": {
+    "message": "Sinkronkan dengan seluler"
+  },
   "addEthereumChainWarningModalHeader": {
     "message": "Cukup tambahkan penyedia RPC ini jika Anda yakin dapat memercayainya. $1",
     "description": "$1 is addEthereumChainWarningModalHeaderPartTwo passed separately so that it can be bolded"
@@ -1123,6 +1134,9 @@
   },
   "addWallet": {
     "message": "Tambahkan dompet"
+  },
+  "added": {
+    "message": "Ditambahkan"
   },
   "addedProtectionDescription": {
     "message": "Anda berinteraksi dengan alamat yang tidak dikenal. Ini membantu mencegah transaksi berbahaya."
@@ -3191,6 +3205,10 @@
     "message": "Izinkan MetaMask menambahkan kode rujukan. Kode ini bersifat permanen. Situs ini menawarkan diskon sesuai ketentuan mereka. MetaMask mendapatkan komisi.",
     "description": "The text for the checkbox label in the DeFi referral confirmation screen"
   },
+  "defiReferralTerms": {
+    "message": "syarat",
+    "description": "The text for the partner terms link in the DeFi referral confirmation screen"
+  },
   "defiReferralTitle": {
     "message": "MetaMask x $1",
     "description": "The title of the DeFi referral confirmation screen. $1 is the name of the partner"
@@ -3595,6 +3613,18 @@
   "enterYourPasswordSocialLoginFlow": {
     "message": "Masukkan kata sandi MetaMask"
   },
+  "enter_verification_code": {
+    "message": "Masukkan kode verifikasi"
+  },
+  "enter_verification_code_desc": {
+    "message": "Demi keamanan, masukkan kode yang ditampilkan di aplikasi MetaMask pada perangkat Anda."
+  },
+  "enter_your_password": {
+    "message": "Masukkan kata sandi"
+  },
+  "enter_your_password_desc": {
+    "message": "Demi keamanan akun, masukkan kata sandi Anda untuk melihat kode QR."
+  },
   "enteredMalicious": {
     "message": "Alamat yang Anda Masukkan"
   },
@@ -3888,6 +3918,9 @@
   },
   "gasPriceFetchFailed": {
     "message": "Estimasi biaya gas gagal karena terjadi kesalahan pada jaringan."
+  },
+  "gasSponsorshipModalTitle": {
+    "message": "Biaya jaringan"
   },
   "gasSponsorshipReserveBalanceWarning": {
     "message": "Jaringan khusus ini mengharuskan Anda untuk mempertahankan saldo cadangan sebesar $1 $2 di akun Anda.",
@@ -4312,6 +4345,10 @@
   "hyperliquidReferralSubtitle": {
     "message": "Hemat hingga 4% untuk perdagangan dengan kode rujukan MetaMask.",
     "description": "The subtitle of the Hyperliquid referral confirmation screen"
+  },
+  "hyperliquidReferralTitle": {
+    "message": "Hemat 4% untuk Hyperliquid",
+    "description": "The title of the redesigned Hyperliquid referral confirmation screen"
   },
   "iUnderstand": {
     "message": "Saya mengerti"
@@ -4914,7 +4951,7 @@
     "message": "Biaya MetaMask"
   },
   "metamaskNotificationsAreOff": {
-    "message": "Saat ini notifikasi dompet tidak aktif."
+    "message": "Aktifkan notifikasi"
   },
   "metamaskSwap": {
     "message": "MetaMask Swap"
@@ -4968,9 +5005,6 @@
   },
   "mismatchedRpcUrl": {
     "message": "Menurut catatan kami, nilai URL RPC yang dikirimkan tidak sesuai dengan penyedia yang dikenal untuk ID chain ini."
-  },
-  "mmFee": {
-    "message": "Biaya MM $1%."
   },
   "month": {
     "message": "bulan"
@@ -5802,6 +5836,9 @@
   "notificationItemUnStakingRequested": {
     "message": "Permintaan pembatalan stake"
   },
+  "notificationSettings": {
+    "message": "Pengaturan notifikasi"
+  },
   "notificationTransactionFailedMessage": {
     "message": "Transaksi $1 gagal! $2",
     "description": "Content of the browser notification that appears when a transaction fails"
@@ -5859,8 +5896,44 @@
   "notificationsSettingsBoxError": {
     "message": "Terjadi kesalahan. Coba lagi."
   },
+  "notificationsSettingsDeselectAll": {
+    "message": "Batal pilih semua"
+  },
+  "notificationsSettingsInAppNotifications": {
+    "message": "Dalam aplikasi"
+  },
+  "notificationsSettingsMarketingConsent": {
+    "message": "Dengan mengaktifkan ini, Anda setuju untuk menerima berita produk dan pembaruan pemasaran dari MetaMask."
+  },
+  "notificationsSettingsMarketingDescription": {
+    "message": "Pembaruan produk, pengumuman fitur, dan rilis terbaru"
+  },
+  "notificationsSettingsPageAllowNotifications": {
+    "message": "Pilih notifikasi yang ingin Anda terima dan bagaimana caranya."
+  },
   "notificationsSettingsPageAllowNotificationsLink": {
     "message": "Pelajari caranya"
+  },
+  "notificationsSettingsPerpsDescription": {
+    "message": "Perubahan posisi perp, likuidasi, tingkat pendanaan, dan pembaruan margin"
+  },
+  "notificationsSettingsPushNotifications": {
+    "message": "Push"
+  },
+  "notificationsSettingsSelectAccounts": {
+    "message": "Akun"
+  },
+  "notificationsSettingsSelectAccountsDescription": {
+    "message": "Pilih akun mana yang ingin Anda terima notifikasinya."
+  },
+  "notificationsSettingsStatusInApp": {
+    "message": "Dalam aplikasi"
+  },
+  "notificationsSettingsStatusOff": {
+    "message": "Mati"
+  },
+  "notificationsSettingsStatusPush": {
+    "message": "Push"
   },
   "numberOfTokens": {
     "message": "Jumlah token"
@@ -6703,6 +6776,9 @@
   "perpsCrossMarginNotSupportedTitle": {
     "message": "Margin silang tidak didukung"
   },
+  "perpsCurrentPrice": {
+    "message": "Harga saat ini"
+  },
   "perpsDateToday": {
     "message": "Hari ini"
   },
@@ -6803,6 +6879,9 @@
   },
   "perpsFilterStocks": {
     "message": "Saham"
+  },
+  "perpsFundAgain": {
+    "message": "Danai lagi"
   },
   "perpsFunding": {
     "message": "Pendanaan"
@@ -7039,11 +7118,30 @@
   "perpsSlippageCustom": {
     "message": "Kustom"
   },
+  "perpsSlippageEditAriaLabel": {
+    "message": "Edit selip maksimum"
+  },
   "perpsSlippageExceeded": {
     "message": "Selip terlampaui. Sesuaikan toleransi selip dan coba lagi."
   },
+  "perpsSlippageExceedsMax": {
+    "message": "Estimasi selip ($1%) melebihi selip maksimum Anda ($2%). Tingkatkan batas maksimum atau kurangi ukuran order.",
+    "description": "$1 is estimated slippage percent, $2 is max slippage percent"
+  },
   "perpsSlippageInputLabel": {
     "message": "Persentase selip maksimum"
+  },
+  "perpsSlippageOutOfRange": {
+    "message": "Masukkan nilai antara $1% dan $2%",
+    "description": "$1 is min percent, $2 is max percent"
+  },
+  "perpsSlippageRowFormat": {
+    "message": "Estimasi: $1% / Maksimum: $2%",
+    "description": "$1 is estimated slippage percent, $2 is max slippage percent"
+  },
+  "perpsSlippageRowFormatPending": {
+    "message": "Estimasi: -- / Maksimum: $1%",
+    "description": "$1 is max slippage percent"
   },
   "perpsSlippageSet": {
     "message": "Atur"
@@ -7714,6 +7812,10 @@
     "message": "Akses kamera diperlukan",
     "description": "Title when the camera permission dialog was dismissed without a choice."
   },
+  "qrErrorMismatchedTransactionBody": {
+    "message": "Kode QR ini untuk transaksi yang berbeda. Batalkan dan coba lagi, pastikan untuk memindai kode QR yang ditampilkan di MetaMask dengan dompet perangkat keras Anda terlebih dahulu.",
+    "description": "Body text when a signature QR belongs to a previous transaction."
+  },
   "qrErrorMismatchedTransactionTitle": {
     "message": "Kode QR salah",
     "description": "Title shown when a signature QR belongs to a different transaction."
@@ -8174,6 +8276,10 @@
     "message": "Masuk...",
     "description": "Text shown while the user is signing in to view their rewards points"
   },
+  "rewardsVipReferralTagLabel": {
+    "message": "VIP",
+    "description": "Label on the gold VIP tag shown next to a VIP referral code"
+  },
   "rpcNameOptional": {
     "message": "Nama RPC (Opsional)"
   },
@@ -8191,6 +8297,9 @@
   },
   "scanQrCode": {
     "message": "Pindai kode QR"
+  },
+  "scan_qr_code_desc": {
+    "message": "Pindai ini dengan aplikasi MetaMask di perangkat yang ingin ditambahkan."
   },
   "scrollDown": {
     "message": "Gulir ke bawah"
@@ -8363,6 +8472,9 @@
   },
   "send": {
     "message": "Kirim"
+  },
+  "sendAlertNewAddressTitle": {
+    "message": "Alamat baru"
   },
   "sendBugReport": {
     "message": "Kirimkan laporan masalah."
@@ -10324,7 +10436,7 @@
     "message": "Volume total"
   },
   "transaction": {
-    "message": "transaksi"
+    "message": "Transaksi"
   },
   "transactionConfirmed": {
     "message": "Transaksi dikonfirmasi"
@@ -10416,6 +10528,10 @@
   "trezor": {
     "message": "Trezor",
     "description": "Hardware device name"
+  },
+  "trezorDesktopAppRequiredError": {
+    "message": "Trezor Suite Desktop diperlukan untuk menggunakan Trezor. Instal dan buka Trezor Suite (suite.trezor.io), lalu coba lagi.",
+    "description": "An error message shown to the user during the hardware connect flow."
   },
   "tronBandwidth": {
     "message": "Bandwidth"

@@ -466,6 +466,14 @@
     "message": "$1 मिंट किया ग्ग्य",
     "description": "$1 is the NFT token symbol"
   },
+  "activity_nftSell_pending_title": {
+    "message": "$1 बेचा जा रहा है",
+    "description": "$1 is the NFT token symbol"
+  },
+  "activity_nftSell_success_title": {
+    "message": "$1 बेचा गया",
+    "description": "$1 is the NFT token symbol"
+  },
   "activity_perpsAddFunds_failed_description": {
     "message": "फंडिंग नहीं हो पाई"
   },
@@ -1041,6 +1049,9 @@
   "addCustomToken": {
     "message": "एक कस्टम टोकन जोड़ें"
   },
+  "addDevice": {
+    "message": "मोबाइल के साथ सिंक करें"
+  },
   "addEthereumChainWarningModalHeader": {
     "message": "इस RPC प्रोवाइडर को केवल तभी जोड़ें जब आप निश्चित हैं कि आप इस पर विश्वास कर सकते हैं। $1",
     "description": "$1 is addEthereumChainWarningModalHeaderPartTwo passed separately so that it can be bolded"
@@ -1123,6 +1134,9 @@
   },
   "addWallet": {
     "message": "वॉलेट जोड़ें"
+  },
+  "added": {
+    "message": "जोड़ा गया"
   },
   "addedProtectionDescription": {
     "message": "आप किसी अज्ञात एड्रेस से इंटरैक्ट कर रहे हैं। इससे बुरी नीयत वाले ट्रांसेक्शन को रोकने में मदद मिलती है।"
@@ -3191,6 +3205,10 @@
     "message": "MetaMask को रेफ़रल कोड जोड़ने की अनुमति दें। यह स्थायी है। साइट अपने नियमों के अनुसार डिस्काउंट देती है। MetaMask को एक फीस मिलता है।",
     "description": "The text for the checkbox label in the DeFi referral confirmation screen"
   },
+  "defiReferralTerms": {
+    "message": "शर्तें",
+    "description": "The text for the partner terms link in the DeFi referral confirmation screen"
+  },
   "defiReferralTitle": {
     "message": "MetaMask x $1",
     "description": "The title of the DeFi referral confirmation screen. $1 is the name of the partner"
@@ -3595,6 +3613,18 @@
   "enterYourPasswordSocialLoginFlow": {
     "message": "MetaMask पासवर्ड दर्ज करें"
   },
+  "enter_verification_code": {
+    "message": "वेरिफ़िकेशन कोड दर्ज करें"
+  },
+  "enter_verification_code_desc": {
+    "message": "सुरक्षा के लिए, अपने डिवाइस पर MetaMask ऐप में दिखाया गया कोड दर्ज करें।"
+  },
+  "enter_your_password": {
+    "message": "अपना पासवर्ड डालें"
+  },
+  "enter_your_password_desc": {
+    "message": "अपने अकाउंट की सुरक्षा के लिए, QR कोड देखने के लिए अपना पासवर्ड दर्ज करें।"
+  },
   "enteredMalicious": {
     "message": "आपके द्वारा दर्ज किया गया एड्रेस"
   },
@@ -3888,6 +3918,9 @@
   },
   "gasPriceFetchFailed": {
     "message": "गैस प्राइस अनुमान नेटवर्क गड़बड़ी के कारण नहीं हो पाया है।"
+  },
+  "gasSponsorshipModalTitle": {
+    "message": "नेटवर्क फीस"
   },
   "gasSponsorshipReserveBalanceWarning": {
     "message": "इस खास नेटवर्क को आपके अकाउंट में $1 $2 का रिज़र्व बनाए रखना ज़रूरी है।",
@@ -4308,6 +4341,10 @@
   "hyperliquidReferralSubtitle": {
     "message": "MetaMask रेफ़रल कोड के साथ ट्रेड पर 4% तक की बचत करें।",
     "description": "The subtitle of the Hyperliquid referral confirmation screen"
+  },
+  "hyperliquidReferralTitle": {
+    "message": "हाइपरलिक्विड पर 4% सेव करें",
+    "description": "The title of the redesigned Hyperliquid referral confirmation screen"
   },
   "iUnderstand": {
     "message": "मैं समझता हूं"
@@ -4910,7 +4947,7 @@
     "message": "MetaMask फीस"
   },
   "metamaskNotificationsAreOff": {
-    "message": "वॉलेट नोटिफिकेशंस वर्तमान में सक्रिय नहीं हैं।"
+    "message": "सूचनाएँ चालू करें"
   },
   "metamaskSwap": {
     "message": "MetaMask स्वैप"
@@ -4964,9 +5001,6 @@
   },
   "mismatchedRpcUrl": {
     "message": "हमारे रिकॉर्ड के अनुसार, सबमिट किया गया RPC-URL वैल्यू इस चेन ID के लिए किसी ज्ञात प्रोवाइडर से मेल नहीं खाता।"
-  },
-  "mmFee": {
-    "message": "$1% MM फीस।"
   },
   "month": {
     "message": "महीना"
@@ -5798,6 +5832,9 @@
   "notificationItemUnStakingRequested": {
     "message": "अनस्टेकिंग का अनुरोध किया गया"
   },
+  "notificationSettings": {
+    "message": "नोटिफिकेशन सेटिंग्स"
+  },
   "notificationTransactionFailedMessage": {
     "message": "ट्रांसेक्शन $1 नहीं हो पाया! $2",
     "description": "Content of the browser notification that appears when a transaction fails"
@@ -5855,8 +5892,44 @@
   "notificationsSettingsBoxError": {
     "message": "कुछ गलत हो गया। कृपया फिर से कोशिश करें।"
   },
+  "notificationsSettingsDeselectAll": {
+    "message": "सभी को अचयनित करें"
+  },
+  "notificationsSettingsInAppNotifications": {
+    "message": "इन-ऐप"
+  },
+  "notificationsSettingsMarketingConsent": {
+    "message": "इसे चालू करके, आप MetaMask से प्रोडक्ट समाचार और मार्केटिंग अपडेट प्राप्त करने के लिए सहमत होते हैं।"
+  },
+  "notificationsSettingsMarketingDescription": {
+    "message": "प्रोडक्ट अपडेट्स, फीचर घोषणाएँ और नए रिलीज़"
+  },
+  "notificationsSettingsPageAllowNotifications": {
+    "message": "आपको किस बारे में और कैसे सूचनाएँ मिलेंगी, यह चुनें।"
+  },
   "notificationsSettingsPageAllowNotificationsLink": {
     "message": "जानें कैसे"
+  },
+  "notificationsSettingsPerpsDescription": {
+    "message": "पर्प्स पोज़िशन में बदलाव, लिक्विडेशन, फंडिंग रेट और मार्जिन अपडेट्स"
+  },
+  "notificationsSettingsPushNotifications": {
+    "message": "पुश"
+  },
+  "notificationsSettingsSelectAccounts": {
+    "message": "एकाउंट्स"
+  },
+  "notificationsSettingsSelectAccountsDescription": {
+    "message": "चुनें कि आप किन एकाउंट्स के लिए सूचनाएँ प्राप्त करना चाहते हैं।"
+  },
+  "notificationsSettingsStatusInApp": {
+    "message": "इन-ऐप"
+  },
+  "notificationsSettingsStatusOff": {
+    "message": "बंद"
+  },
+  "notificationsSettingsStatusPush": {
+    "message": "पुश"
   },
   "numberOfTokens": {
     "message": "टोकन की संख्या"
@@ -6699,6 +6772,9 @@
   "perpsCrossMarginNotSupportedTitle": {
     "message": "क्रॉस मार्जिन सपोर्टेड नहीं है"
   },
+  "perpsCurrentPrice": {
+    "message": "वर्तमान प्राइस"
+  },
   "perpsDateToday": {
     "message": "आज"
   },
@@ -6799,6 +6875,9 @@
   },
   "perpsFilterStocks": {
     "message": "स्टॉक्स"
+  },
+  "perpsFundAgain": {
+    "message": "फिर से फंड करें"
   },
   "perpsFunding": {
     "message": "फंडिंग"
@@ -7035,11 +7114,30 @@
   "perpsSlippageCustom": {
     "message": "कस्टम"
   },
+  "perpsSlippageEditAriaLabel": {
+    "message": "अधिकतम स्लिपेज (slippage) बदलें"
+  },
   "perpsSlippageExceeded": {
     "message": "स्लिपेज सीमा से अधिक हो गया है। अपनी स्लिपेज टॉलरेंस को समायोजित करें और दोबारा कोशिश करें।"
   },
+  "perpsSlippageExceedsMax": {
+    "message": "अनुमानित स्लिपेज (slippage) ($1%) आपके अधिकतम स्लिपेज (slippage) ($2%) से अधिक है। सीमा बढ़ाएं या ऑर्डर साइज़ कम करें।",
+    "description": "$1 is estimated slippage percent, $2 is max slippage percent"
+  },
   "perpsSlippageInputLabel": {
     "message": "अधिकतम स्लिपेज (slippage) प्रतिशत"
+  },
+  "perpsSlippageOutOfRange": {
+    "message": "$1% और $2% के बीच एक मान दर्ज करें",
+    "description": "$1 is min percent, $2 is max percent"
+  },
+  "perpsSlippageRowFormat": {
+    "message": "अनुमानित: $1% / अधिकतम: $2%",
+    "description": "$1 is estimated slippage percent, $2 is max slippage percent"
+  },
+  "perpsSlippageRowFormatPending": {
+    "message": "अनुमानित: -- / अधिकतम: $1%",
+    "description": "$1 is max slippage percent"
   },
   "perpsSlippageSet": {
     "message": "निर्धारित करें"
@@ -7706,6 +7804,10 @@
     "message": "कैमरा एक्सेस की आवश्यकता है",
     "description": "Title when the camera permission dialog was dismissed without a choice."
   },
+  "qrErrorMismatchedTransactionBody": {
+    "message": "यह QR कोड किसी दूसरे ट्रांसेक्शन के लिए है। इसे कैंसिल करें और दोबारा कोशिश करें, और दोबारा कोशिश करने से पहले सुनिश्चित करें कि आप अपने हार्डवेयर वॉलेट से MetaMask में दिखाए गए QR कोड को पहले स्कैन करें।",
+    "description": "Body text when a signature QR belongs to a previous transaction."
+  },
   "qrErrorMismatchedTransactionTitle": {
     "message": "गलत QR कोड",
     "description": "Title shown when a signature QR belongs to a different transaction."
@@ -8166,6 +8268,10 @@
     "message": "साइन इन हो रहा है...",
     "description": "Text shown while the user is signing in to view their rewards points"
   },
+  "rewardsVipReferralTagLabel": {
+    "message": "VIP",
+    "description": "Label on the gold VIP tag shown next to a VIP referral code"
+  },
   "rpcNameOptional": {
     "message": "RPC का नाम (वैकल्पिक)"
   },
@@ -8183,6 +8289,9 @@
   },
   "scanQrCode": {
     "message": "QR कोड स्कैन करें"
+  },
+  "scan_qr_code_desc": {
+    "message": "इसे उस डिवाइस पर MetaMask ऐप से स्कैन करें जिसे आप जोड़ना चाहते हैं।"
   },
   "scrollDown": {
     "message": "नीचे स्क्रॉल करें"
@@ -8355,6 +8464,9 @@
   },
   "send": {
     "message": "भेजें"
+  },
+  "sendAlertNewAddressTitle": {
+    "message": "नया एड्रेस"
   },
   "sendBugReport": {
     "message": "हमें एक बग रिपोर्ट भेजें।"
@@ -10408,6 +10520,10 @@
   "trezor": {
     "message": "ट्रेज़र",
     "description": "Hardware device name"
+  },
+  "trezorDesktopAppRequiredError": {
+    "message": "Trezor इस्तेमाल करने के लिए Trezor Suite Desktop ज़रूरी है। कृपया Trezor Suite (suite.trezor.io) इंस्टॉल करें और खोलें और फिर से कोशिश करें।",
+    "description": "An error message shown to the user during the hardware connect flow."
   },
   "tronBandwidth": {
     "message": "बैंडविड्थ"

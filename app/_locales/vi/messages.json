@@ -466,6 +466,14 @@
     "message": "Đã đúc $1",
     "description": "$1 is the NFT token symbol"
   },
+  "activity_nftSell_pending_title": {
+    "message": "Đang bán $1",
+    "description": "$1 is the NFT token symbol"
+  },
+  "activity_nftSell_success_title": {
+    "message": "Đã bán $1",
+    "description": "$1 is the NFT token symbol"
+  },
   "activity_perpsAddFunds_failed_description": {
     "message": "Nạp tiền thất bại"
   },
@@ -1041,6 +1049,9 @@
   "addCustomToken": {
     "message": "Thêm token tùy chỉnh"
   },
+  "addDevice": {
+    "message": "Đồng bộ với thiết bị di động"
+  },
   "addEthereumChainWarningModalHeader": {
     "message": "Chỉ thêm nhà cung cấp RPC này nếu bạn chắc chắn bạn có thể tin tưởng. $1",
     "description": "$1 is addEthereumChainWarningModalHeaderPartTwo passed separately so that it can be bolded"
@@ -1123,6 +1134,9 @@
   },
   "addWallet": {
     "message": "Thêm ví"
+  },
+  "added": {
+    "message": "Đã thêm"
   },
   "addedProtectionDescription": {
     "message": "Bạn đang tương tác với một địa chỉ không xác định. Điều này giúp ngăn chặn các giao dịch độc hại."
@@ -3191,6 +3205,10 @@
     "message": "Cho phép MetaMask thêm mã giới thiệu. Hành động này là vĩnh viễn. Trang web cung cấp chiết khấu theo điều khoản của họ. MetaMask nhận được một khoản phí.",
     "description": "The text for the checkbox label in the DeFi referral confirmation screen"
   },
+  "defiReferralTerms": {
+    "message": "điều khoản",
+    "description": "The text for the partner terms link in the DeFi referral confirmation screen"
+  },
   "defiReferralTitle": {
     "message": "MetaMask x $1",
     "description": "The title of the DeFi referral confirmation screen. $1 is the name of the partner"
@@ -3595,6 +3613,18 @@
   "enterYourPasswordSocialLoginFlow": {
     "message": "Nhập mật khẩu MetaMask"
   },
+  "enter_verification_code": {
+    "message": "Nhập mã xác minh"
+  },
+  "enter_verification_code_desc": {
+    "message": "Để bảo mật, hãy nhập mã được hiển thị trong ứng dụng MetaMask trên thiết bị của bạn."
+  },
+  "enter_your_password": {
+    "message": "Nhập mật khẩu"
+  },
+  "enter_your_password_desc": {
+    "message": "Để bảo mật tài khoản, hãy nhập mật khẩu để xem mã QR."
+  },
   "enteredMalicious": {
     "message": "Địa chỉ bạn đã nhập"
   },
@@ -3888,6 +3918,9 @@
   },
   "gasPriceFetchFailed": {
     "message": "Không ước tính được giá gas do lỗi mạng."
+  },
+  "gasSponsorshipModalTitle": {
+    "message": "Phí mạng"
   },
   "gasSponsorshipReserveBalanceWarning": {
     "message": "Mạng cụ thể này yêu cầu duy trì số dư dự trữ $1 $2 trong tài khoản của bạn.",
@@ -4312,6 +4345,10 @@
   "hyperliquidReferralSubtitle": {
     "message": "Tiết kiệm đến 4% khi giao dịch với mã giới thiệu MetaMask.",
     "description": "The subtitle of the Hyperliquid referral confirmation screen"
+  },
+  "hyperliquidReferralTitle": {
+    "message": "Tiết kiệm 4% trên Hyperliquid",
+    "description": "The title of the redesigned Hyperliquid referral confirmation screen"
   },
   "iUnderstand": {
     "message": "Tôi hiểu"
@@ -4914,7 +4951,7 @@
     "message": "Phí MetaMask"
   },
   "metamaskNotificationsAreOff": {
-    "message": "Thông báo ví hiện không hoạt động."
+    "message": "Bật thông báo"
   },
   "metamaskSwap": {
     "message": "MetaMask Hoán đổi"
@@ -4968,9 +5005,6 @@
   },
   "mismatchedRpcUrl": {
     "message": "Theo hồ sơ của chúng tôi, giá trị RPC URL đã gửi không khớp với một nhà cung cấp đã biết cho ID chuỗi này."
-  },
-  "mmFee": {
-    "message": "Phí MM $1%."
   },
   "month": {
     "message": "tháng"
@@ -5802,6 +5836,9 @@
   "notificationItemUnStakingRequested": {
     "message": "Đã yêu cầu hủy ký gửi"
   },
+  "notificationSettings": {
+    "message": "Cài đặt thông báo"
+  },
   "notificationTransactionFailedMessage": {
     "message": "Giao dịch $1 không thành công! $2",
     "description": "Content of the browser notification that appears when a transaction fails"
@@ -5859,8 +5896,44 @@
   "notificationsSettingsBoxError": {
     "message": "Đã xảy ra lỗi. Vui lòng thử lại."
   },
+  "notificationsSettingsDeselectAll": {
+    "message": "Bỏ chọn tất cả"
+  },
+  "notificationsSettingsInAppNotifications": {
+    "message": "Trong ứng dụng"
+  },
+  "notificationsSettingsMarketingConsent": {
+    "message": "Khi bật tùy chọn này, bạn đồng ý nhận tin tức sản phẩm và các cập nhật tiếp thị từ MetaMask."
+  },
+  "notificationsSettingsMarketingDescription": {
+    "message": "Cập nhật sản phẩm, thông báo tính năng và các bản phát hành mới"
+  },
+  "notificationsSettingsPageAllowNotifications": {
+    "message": "Chọn nội dung bạn muốn nhận thông báo và cách nhận."
+  },
   "notificationsSettingsPageAllowNotificationsLink": {
     "message": "Tìm hiểu cách thức"
+  },
+  "notificationsSettingsPerpsDescription": {
+    "message": "Thay đổi vị thế hợp đồng vĩnh cửu, thanh lý, tỷ lệ tài trợ và cập nhật ký quỹ"
+  },
+  "notificationsSettingsPushNotifications": {
+    "message": "Thông báo đẩy"
+  },
+  "notificationsSettingsSelectAccounts": {
+    "message": "Tài khoản"
+  },
+  "notificationsSettingsSelectAccountsDescription": {
+    "message": "Chọn những tài khoản mà bạn muốn nhận thông báo."
+  },
+  "notificationsSettingsStatusInApp": {
+    "message": "Trong ứng dụng"
+  },
+  "notificationsSettingsStatusOff": {
+    "message": "Tắt"
+  },
+  "notificationsSettingsStatusPush": {
+    "message": "Thông báo đẩy"
   },
   "numberOfTokens": {
     "message": "Số lượng token"
@@ -6703,6 +6776,9 @@
   "perpsCrossMarginNotSupportedTitle": {
     "message": "Không hỗ trợ ký quỹ chéo"
   },
+  "perpsCurrentPrice": {
+    "message": "Giá hiện tại"
+  },
   "perpsDateToday": {
     "message": "Hôm nay"
   },
@@ -6803,6 +6879,9 @@
   },
   "perpsFilterStocks": {
     "message": "Cổ phiếu"
+  },
+  "perpsFundAgain": {
+    "message": "Nạp tiền lại"
   },
   "perpsFunding": {
     "message": "Tài trợ"
@@ -7039,11 +7118,30 @@
   "perpsSlippageCustom": {
     "message": "Tùy chỉnh"
   },
+  "perpsSlippageEditAriaLabel": {
+    "message": "Chỉnh sửa mức trượt giá tối đa"
+  },
   "perpsSlippageExceeded": {
     "message": "Trượt giá vượt quá mức cho phép. Hãy điều chỉnh mức chấp nhận trượt giá và thử lại."
   },
+  "perpsSlippageExceedsMax": {
+    "message": "Mức trượt giá ước tính ($1%) vượt quá mức trượt giá tối đa của bạn ($2%). Hãy tăng giới hạn hoặc giảm kích thước lệnh.",
+    "description": "$1 is estimated slippage percent, $2 is max slippage percent"
+  },
   "perpsSlippageInputLabel": {
     "message": "Phần trăm trượt giá tối đa"
+  },
+  "perpsSlippageOutOfRange": {
+    "message": "Nhập giá trị từ $1% đến $2%",
+    "description": "$1 is min percent, $2 is max percent"
+  },
+  "perpsSlippageRowFormat": {
+    "message": "Ước tính: $1% / Tối đa: $2%",
+    "description": "$1 is estimated slippage percent, $2 is max slippage percent"
+  },
+  "perpsSlippageRowFormatPending": {
+    "message": "Ước tính: -- / Tối đa: $1%",
+    "description": "$1 is max slippage percent"
   },
   "perpsSlippageSet": {
     "message": "Đặt"
@@ -7714,6 +7812,10 @@
     "message": "Cần quyền truy cập camera",
     "description": "Title when the camera permission dialog was dismissed without a choice."
   },
+  "qrErrorMismatchedTransactionBody": {
+    "message": "Mã QR này dành cho một giao dịch khác. Vui lòng hủy và thử lại, đảm bảo quét mã QR được hiển thị trong MetaMask bằng ví cứng của bạn trước.",
+    "description": "Body text when a signature QR belongs to a previous transaction."
+  },
   "qrErrorMismatchedTransactionTitle": {
     "message": "Sai mã QR",
     "description": "Title shown when a signature QR belongs to a different transaction."
@@ -8174,6 +8276,10 @@
     "message": "Đang đăng nhập...",
     "description": "Text shown while the user is signing in to view their rewards points"
   },
+  "rewardsVipReferralTagLabel": {
+    "message": "VIP",
+    "description": "Label on the gold VIP tag shown next to a VIP referral code"
+  },
   "rpcNameOptional": {
     "message": "Tên RPC (Không bắt buộc)"
   },
@@ -8191,6 +8297,9 @@
   },
   "scanQrCode": {
     "message": "Quét mã QR"
+  },
+  "scan_qr_code_desc": {
+    "message": "Quét mã này bằng ứng dụng MetaMask trên thiết bị mà bạn muốn thêm."
   },
   "scrollDown": {
     "message": "Cuộn xuống"
@@ -8363,6 +8472,9 @@
   },
   "send": {
     "message": "Gửi"
+  },
+  "sendAlertNewAddressTitle": {
+    "message": "Địa chỉ mới"
   },
   "sendBugReport": {
     "message": "Gửi báo cáo lỗi."
@@ -10324,7 +10436,7 @@
     "message": "Tổng khối lượng giao dịch"
   },
   "transaction": {
-    "message": "giao dịch"
+    "message": "Giao dịch"
   },
   "transactionConfirmed": {
     "message": "Giao dịch đã được xác nhận"
@@ -10416,6 +10528,10 @@
   "trezor": {
     "message": "Trezor",
     "description": "Hardware device name"
+  },
+  "trezorDesktopAppRequiredError": {
+    "message": "Cần có Trezor Suite Desktop để sử dụng Trezor. Vui lòng cài đặt và mở Trezor Suite (suite.trezor.io) rồi thử lại.",
+    "description": "An error message shown to the user during the hardware connect flow."
   },
   "tronBandwidth": {
     "message": "Băng thông"

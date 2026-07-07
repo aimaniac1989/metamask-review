@@ -466,6 +466,14 @@
     "message": "Nag-mint ng $1",
     "description": "$1 is the NFT token symbol"
   },
+  "activity_nftSell_pending_title": {
+    "message": "Ibinibenta ang $1",
+    "description": "$1 is the NFT token symbol"
+  },
+  "activity_nftSell_success_title": {
+    "message": "Naibenta ang $1",
+    "description": "$1 is the NFT token symbol"
+  },
   "activity_perpsAddFunds_failed_description": {
     "message": "Nabigo ang pagpopondo"
   },
@@ -1041,6 +1049,9 @@
   "addCustomToken": {
     "message": "Magdagdag ng custom na token"
   },
+  "addDevice": {
+    "message": "I-sync sa mobile"
+  },
   "addEthereumChainWarningModalHeader": {
     "message": "Idagdag lamang ang RPC provider na ito kung sigurado kang mapagkakatiwalaan ito. $1",
     "description": "$1 is addEthereumChainWarningModalHeaderPartTwo passed separately so that it can be bolded"
@@ -1123,6 +1134,9 @@
   },
   "addWallet": {
     "message": "Magdagdag ng wallet"
+  },
+  "added": {
+    "message": "Naidagdag"
   },
   "addedProtectionDescription": {
     "message": "Nakikipag-ugnayan ka sa hindi kilalang address. Nakakatulong ito na maiwasan ang mga mapaminsalang transaksyon."
@@ -3191,6 +3205,10 @@
     "message": "Pahintulutan ang MetaMask na maglagay ng referral code. Permanente ito. Mag-aalok ng diskwento ang site batay sa kanilang mga tuntunin. May bayad ang MetaMask.",
     "description": "The text for the checkbox label in the DeFi referral confirmation screen"
   },
+  "defiReferralTerms": {
+    "message": "mga Tuntunin",
+    "description": "The text for the partner terms link in the DeFi referral confirmation screen"
+  },
   "defiReferralTitle": {
     "message": "MetaMask x $1",
     "description": "The title of the DeFi referral confirmation screen. $1 is the name of the partner"
@@ -3595,6 +3613,18 @@
   "enterYourPasswordSocialLoginFlow": {
     "message": "Ilagay ang MetaMask password"
   },
+  "enter_verification_code": {
+    "message": "Ilagay ang code ng pag-verify"
+  },
+  "enter_verification_code_desc": {
+    "message": "Para sa seguridad, ilagay ang code na ipinapakita ng MetaMask app sa iyong device."
+  },
+  "enter_your_password": {
+    "message": "Ilagay ang password mo"
+  },
+  "enter_your_password_desc": {
+    "message": "Para sa seguridad ng account, ilagay ang iyong password para makita ang QR code."
+  },
   "enteredMalicious": {
     "message": "Ang Address Na Inilagay Mo"
   },
@@ -3888,6 +3918,9 @@
   },
   "gasPriceFetchFailed": {
     "message": "Ang pagtantya ng presyo ng gas ay nabigo dahil sa network error."
+  },
+  "gasSponsorshipModalTitle": {
+    "message": "Bayad sa network"
   },
   "gasSponsorshipReserveBalanceWarning": {
     "message": "Kailangan ng partikular na network na ito ang pagpapanatili ng reserba na $1 $2 sa iyong account.",
@@ -4308,6 +4341,10 @@
   "hyperliquidReferralSubtitle": {
     "message": "Makatipid ng hanggang 4% sa mga trade na gumagamit ng referral code ng MetaMask.",
     "description": "The subtitle of the Hyperliquid referral confirmation screen"
+  },
+  "hyperliquidReferralTitle": {
+    "message": "Makatipid ng 4% sa Hyperliquid",
+    "description": "The title of the redesigned Hyperliquid referral confirmation screen"
   },
   "iUnderstand": {
     "message": "Nauunawaan ko"
@@ -4910,7 +4947,7 @@
     "message": "Bayad sa MetaMask"
   },
   "metamaskNotificationsAreOff": {
-    "message": "Hindi active sa kasalukuyan ang mga notipikasyon sa wallet."
+    "message": "I-on ang mga notipikasyon"
   },
   "metamaskSwap": {
     "message": "Pag-swap sa MetaMask"
@@ -4964,9 +5001,6 @@
   },
   "mismatchedRpcUrl": {
     "message": "Ayon sa aming mga talaan, ang isinumiteng RPC URL value ay hindi tumutugma sa isang kilalang provider para sa ID ng chain na ito."
-  },
-  "mmFee": {
-    "message": "$1% MM ang bayad."
   },
   "month": {
     "message": "buwan"
@@ -5798,6 +5832,9 @@
   "notificationItemUnStakingRequested": {
     "message": "Hiniling ang pag-unstake"
   },
+  "notificationSettings": {
+    "message": "Mga setting ng notipikasyon"
+  },
   "notificationTransactionFailedMessage": {
     "message": "Nabigo ang transaksyon $1! $2",
     "description": "Content of the browser notification that appears when a transaction fails"
@@ -5855,8 +5892,44 @@
   "notificationsSettingsBoxError": {
     "message": "Nagkaproblema. Subukang muli."
   },
+  "notificationsSettingsDeselectAll": {
+    "message": "Alisin ang pagkapili sa lahat"
+  },
+  "notificationsSettingsInAppNotifications": {
+    "message": "Sa app"
+  },
+  "notificationsSettingsMarketingConsent": {
+    "message": "Kapag in-on mo ito, sumasang-ayon kang tumanggap ng mga balita sa produkto at update sa marketing mula sa MetaMask."
+  },
+  "notificationsSettingsMarketingDescription": {
+    "message": "Mga update sa produkto, tampok na anunsyo, at bagong release"
+  },
+  "notificationsSettingsPageAllowNotifications": {
+    "message": "Piliin kung para saan mo gustong maabisuhan at kung paano."
+  },
   "notificationsSettingsPageAllowNotificationsLink": {
     "message": "Alamin kung paano"
+  },
+  "notificationsSettingsPerpsDescription": {
+    "message": "Mga pagbabago sa posisyon ng mga Perp, liquidation, mga rate ng pagpopondo, at update sa margin"
+  },
+  "notificationsSettingsPushNotifications": {
+    "message": "Push"
+  },
+  "notificationsSettingsSelectAccounts": {
+    "message": "Mga Account"
+  },
+  "notificationsSettingsSelectAccountsDescription": {
+    "message": "Piliin kung para sa aling mga account mo gustong makatanggap ng mga notipikasyon."
+  },
+  "notificationsSettingsStatusInApp": {
+    "message": "Sa app"
+  },
+  "notificationsSettingsStatusOff": {
+    "message": "I-off"
+  },
+  "notificationsSettingsStatusPush": {
+    "message": "Push"
   },
   "numberOfTokens": {
     "message": "Bilang ng token"
@@ -6699,6 +6772,9 @@
   "perpsCrossMarginNotSupportedTitle": {
     "message": "Hindi suportado ang cross margin"
   },
+  "perpsCurrentPrice": {
+    "message": "Kasalukuyang presyo"
+  },
   "perpsDateToday": {
     "message": "Ngayong araw"
   },
@@ -6799,6 +6875,9 @@
   },
   "perpsFilterStocks": {
     "message": "Stocks"
+  },
+  "perpsFundAgain": {
+    "message": "Pondohan muli"
   },
   "perpsFunding": {
     "message": "Pagpopondo"
@@ -7035,11 +7114,30 @@
   "perpsSlippageCustom": {
     "message": "Custom"
   },
+  "perpsSlippageEditAriaLabel": {
+    "message": "I-edit ang max slippage"
+  },
   "perpsSlippageExceeded": {
     "message": "Lumampas ang slippage. Ayusin ang slippage tolerance at subukan muli."
   },
+  "perpsSlippageExceedsMax": {
+    "message": "Lumampas ang tinatayang slippage ($1%) sa max slippage mo na ($2%). Itaas ang cap o bawasan ang laki ng order.",
+    "description": "$1 is estimated slippage percent, $2 is max slippage percent"
+  },
   "perpsSlippageInputLabel": {
     "message": "Max na porsyento ng slippage"
+  },
+  "perpsSlippageOutOfRange": {
+    "message": "Maglagay ng value sa pagitan ng $1% at $2%",
+    "description": "$1 is min percent, $2 is max percent"
+  },
+  "perpsSlippageRowFormat": {
+    "message": "Tinataya: $1% / Max: $2%",
+    "description": "$1 is estimated slippage percent, $2 is max slippage percent"
+  },
+  "perpsSlippageRowFormatPending": {
+    "message": "Tinataya: -- / Max: $1%",
+    "description": "$1 is max slippage percent"
   },
   "perpsSlippageSet": {
     "message": "Itakda"
@@ -7706,6 +7804,10 @@
     "message": "Kailangan ang access sa camera",
     "description": "Title when the camera permission dialog was dismissed without a choice."
   },
+  "qrErrorMismatchedTransactionBody": {
+    "message": "Ang QR na ito ay para sa ibang transaksyon. Kanselahin at subukan muli, tiyaking i-scan muna ang QR code na ipinapakita sa MetaMask kasama ng iyong wallet na hardware.",
+    "description": "Body text when a signature QR belongs to a previous transaction."
+  },
   "qrErrorMismatchedTransactionTitle": {
     "message": "Maling QR code",
     "description": "Title shown when a signature QR belongs to a different transaction."
@@ -8166,6 +8268,10 @@
     "message": "Nagsa-sign in...",
     "description": "Text shown while the user is signing in to view their rewards points"
   },
+  "rewardsVipReferralTagLabel": {
+    "message": "VIP",
+    "description": "Label on the gold VIP tag shown next to a VIP referral code"
+  },
   "rpcNameOptional": {
     "message": "Pangalan ng RPC (Opsyonal)"
   },
@@ -8183,6 +8289,9 @@
   },
   "scanQrCode": {
     "message": "Mag-scan ng QR code"
+  },
+  "scan_qr_code_desc": {
+    "message": "I-scan ito gamit ang MetaMask app sa device na gusto mong idagdag."
   },
   "scrollDown": {
     "message": "Mag-scroll pababa"
@@ -8355,6 +8464,9 @@
   },
   "send": {
     "message": "Ipadala"
+  },
+  "sendAlertNewAddressTitle": {
+    "message": "Bagong address"
   },
   "sendBugReport": {
     "message": "Padalhan kami ng ulat ng bug."
@@ -10316,7 +10428,7 @@
     "message": "Kabuuang volume"
   },
   "transaction": {
-    "message": "transaksyong"
+    "message": "Transaksyon"
   },
   "transactionConfirmed": {
     "message": "Nakumpirma ang transaksyon"
@@ -10408,6 +10520,10 @@
   "trezor": {
     "message": "Trezor",
     "description": "Hardware device name"
+  },
+  "trezorDesktopAppRequiredError": {
+    "message": "Kinakailangan ang Trezor Suite Desktop upang magamit ang Trezor. Paki-install at buksan ang Trezor Suite (suite.trezor.io), pagkatapos ay subukan muli.",
+    "description": "An error message shown to the user during the hardware connect flow."
   },
   "tronBandwidth": {
     "message": "Bandwidth"
