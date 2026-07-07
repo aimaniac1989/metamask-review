@@ -1211,7 +1211,7 @@ export async function mockTronGetChainParameters(
   mockServer: Mockttp,
 ): Promise<MockedEndpoint> {
   return mockServer
-    .forPost(tronInfuraUrl('/wallet/getchainparameters'))
+    .forGet(tronInfuraUrl('/wallet/getchainparameters'))
     .always()
     .thenCallback(() => ({
       statusCode: 200,
