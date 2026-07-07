@@ -1,4 +1,4 @@
-# MetaMask Browser Extension
+# MetaMask Browser Review
 
 Hey! We are hiring JavaScript Engineers! [Apply here](https://boards.greenhouse.io/consensys/jobs/2572388)!
 ---
