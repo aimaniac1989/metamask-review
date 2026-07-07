@@ -161,6 +161,7 @@
   "resolutions": {
     "@grpc/grpc-js": "^1.9.16",
     "@metamask/messenger@npm:^0.3.0": "^1.2.0",
+    "@metamask/messenger@npm:^2.0.0": "^1.2.0",
     "@metamask/network-controller": "34.0.0",
     "follow-redirects": "^1.16.0",
     "@unrs/resolver-binding-wasm32-wasi": "npm:npm-empty-package@1.0.0",
@@ -449,12 +450,12 @@
     "@metamask/solana-wallet-standard": "^1.0.0",
     "@metamask/storage-service": "^1.0.0",
     "@metamask/subscription-controller": "^6.2.0",
-    "@metamask/transaction-controller": "^68.1.1",
+    "@metamask/transaction-controller": "^68.2.2",
     "@metamask/transaction-pay-controller": "^23.17.2",
     "@metamask/tron-wallet-snap": "^1.28.0",
     "@metamask/user-operation-controller": "^41.2.5",
     "@metamask/utils": "^11.11.0",
-    "@metamask/wallet": "^6.0.0",
+    "@metamask/wallet": "^7.0.0",
     "@mui/material": "^5.18.0",
     "@mui/system": "^5.18.0",
     "@mui/x-date-pickers": "^7.29.4",
@@ -837,16 +838,6 @@
     "yargs": "^17.7.2",
     "yargs-parser": "^21.1.1",
     "yazl": "^3.3.1"
-  },
-  "previewBuilds": {
-    "@metamask/transaction-controller": {
-      "type": "non-breaking",
-      "previewVersion": "68.2.0-preview-c97a549b1"
-    },
-    "@metamask/wallet": {
-      "type": "breaking",
-      "previewVersion": "5.0.0-preview-c97a549b1"
-    }
   },
   "engines": {
     "node": ">=24.13.0",
